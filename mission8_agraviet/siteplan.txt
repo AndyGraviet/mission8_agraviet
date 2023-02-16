@@ -1,0 +1,27 @@
+﻿
+OBJECTIVE --> build task entry crud site based on SC time management matrix
+
+ORGANIZATION
+    model {
+
+        task - text field
+        due date - string
+        quadrant - string, use select dropdown
+        category - string, select dropdown
+        completed - bool, checkbox
+
+    }
+
+    views {
+
+        quadrant view - displays all UNCOMPLETED tasks in their quadrants, should have some functionality here to update / delete
+        all task view - display all tasks ever entered, just a big table for this one
+        all completed view - display all completed tasks, basic table view
+        
+    }
+
+    controller {
+
+        
+
+    }

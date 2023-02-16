@@ -1,0 +1,197 @@
+﻿@{
+    ViewData["Title"] = "Current Tasks";
+}
+@model List<mission8_agraviet.Models.Task>
+
+<div class="columns">
+    <div class="column">
+        <article class="message is-danger">
+            <div class="message-header">
+                <p class="is-size-5">URGENT & IMPORTANT</p>
+            </div>
+            <div class="message-body">
+                <table class="table is-striped is-hoverable">
+                    <thead>
+                        <tr class="has-background-danger">
+                            <td><strong class="is-size-7">Category</strong></td>
+                            <td><strong class="is-size-7">Title</strong></td>
+                            <td><strong class="is-size-7">Due Date</strong></td>
+                            <td><strong class="is-size-7">Task Notes</strong></td>
+                            <td><strong class="is-size-7">Status</strong></td>
+                            <td><strong class="is-size-7">Edit</strong></td>
+                            <td><strong class="is-size-7">Delete</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td>@x.Category.CategoryName</td>
+                                <td>@x.TaskTitle</td>
+                                <td>@x.DueDate</td>
+                                <td>@x.TaskNotes</td>
+                                @{
+                                    if (x.Completed)
+                                    {
+                                        <td>Yes</td>
+                                    }
+                                    else
+                                    {
+                                        <td>No</td>
+                                    }
+                                }
+                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
+                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+    <div class="column">
+        <article class="message is-warning">
+            <div class="message-header">
+                <p class="is-size-5">IMPORTANT & NOT URGENT</p>
+            </div>
+            <div class="message-body">
+                <table class="table is-striped is-hoverable">
+                    <thead>
+                        <tr class="has-background-warning">
+                            <td><strong class="is-size-7">Category</strong></td>
+                            <td><strong class="is-size-7">Title</strong></td>
+                            <td><strong class="is-size-7">Due Date</strong></td>
+                            <td><strong class="is-size-7">Task Notes</strong></td>
+                            <td><strong class="is-size-7">Status</strong></td>
+                            <td><strong class="is-size-7">Edit</strong></td>
+                            <td><strong class="is-size-7">Delete</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td>@x.Category.CategoryName</td>
+                                <td>@x.TaskTitle</td>
+                                <td>@x.DueDate</td>
+                                <td>@x.TaskNotes</td>
+                                @{
+                                    if (x.Completed)
+                                    {
+                                        <td>Yes</td>
+                                    }
+                                    else
+                                    {
+                                        <td>No</td>
+                                    }
+                                }
+                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
+                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="columns">
+    <div class="column">
+        <article class="message is-success">
+            <div class="message-header">
+                <p class="is-size-5">NOT IMPORTANT & URGENT</p>
+            </div>
+            <div class="message-body">
+                <table class="table is-striped is-hoverable">
+                    <thead>
+                        <tr class="has-background-success">
+                            <td><strong class="is-size-7">Category</strong></td>
+                            <td><strong class="is-size-7">Title</strong></td>
+                            <td><strong class="is-size-7">Due Date</strong></td>
+                            <td><strong class="is-size-7">Task Notes</strong></td>
+                            <td><strong class="is-size-7">Status</strong></td>
+                            <td><strong class="is-size-7">Edit</strong></td>
+                            <td><strong class="is-size-7">Delete</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td>@x.Category.CategoryName</td>
+                                <td>@x.TaskTitle</td>
+                                <td>@x.DueDate</td>
+                                <td>@x.TaskNotes</td>
+                                @{
+                                    if (x.Completed)
+                                    {
+                                        <td>Yes</td>
+                                    }
+                                    else
+                                    {
+                                        <td>No</td>
+                                    }
+                                }
+                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
+                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+    <div class="column">
+        <article class="message is-info">
+            <div class="message-header">
+                <p class="is-size-5">NOT IMPORTANT & NOT URGENT</p>
+            </div>
+            <div class="message-body">
+                <table class="table is-striped is-hoverable">
+                    <thead>
+                        <tr class="has-background-info">
+                            <td><strong class="is-size-7">Category</strong></td>
+                            <td><strong class="is-size-7">Title</strong></td>
+                            <td><strong class="is-size-7">Due Date</strong></td>
+                            <td><strong class="is-size-7">Task Notes</strong></td>
+                            <td><strong class="is-size-7">Status</strong></td>
+                            <td><strong class="is-size-7">Edit</strong></td>
+                            <td><strong class="is-size-7">Delete</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td>@x.Category.CategoryName</td>
+                                <td>@x.TaskTitle</td>
+                                <td>@x.DueDate</td>
+                                <td>@x.TaskNotes</td>
+                                @{
+                                    if (x.Completed)
+                                    {
+                                        <td>Yes</td>
+                                    }
+                                    else
+                                    {
+                                        <td>No</td>
+                                    }
+                                }
+                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
+                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</div>
+
+
+
+
+
+
+

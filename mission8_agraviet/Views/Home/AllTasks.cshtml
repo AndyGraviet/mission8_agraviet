@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<mission8_agraviet.Models.Task>
+
+<h1>All Task View</h1>
+<table class="table is-striped is-hoverable">
+    <thead>
+        <tr class="has-background-link">
+            <td><strong class="is-size-5 has-text-white">Category</strong></td>
+            <td><strong class="is-size-5 has-text-white">Title</strong></td>
+            <td><strong class="is-size-5 has-text-white">Due Date</strong></td>
+            <td><strong class="is-size-5 has-text-white">Task Notes</strong></td>
+            <td><strong class="is-size-5 has-text-white">Status</strong></td>
+            <td><strong class="is-size-5 has-text-white">Edit</strong></td>
+            <td><strong class="is-size-5 has-text-white">Delete</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+            {
+            <tr>
+                <td>@x.Category.CategoryName</td>
+                <td>@x.TaskTitle</td>
+                <td>@x.DueDate</td>
+                <td>@x.TaskNotes</td>
+                @{
+                    if (x.Completed)
+                    {
+                        <td>Yes</td>
+                    } else
+                    {
+                        <td>No</td>
+                    }
+                }
+                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
+                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
+            </tr>
+        }
+    </tbody>
+</table>

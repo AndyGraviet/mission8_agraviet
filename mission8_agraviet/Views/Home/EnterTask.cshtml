@@ -1,0 +1,71 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model mission8_agraviet.Models.Task
+
+<form method="post">
+    <div class="text-center">
+        <h1 class="display-4">Enter New Task</h1>
+    </div>
+
+    <div class="field">
+        <label class="label" asp-for="TaskTitle">Task Title</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Go grocery shopping" asp-for="TaskTitle">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" asp-for="DueDate">Due Date</label>
+        <div class="control">
+            <input class="input" type="date" asp-for="DueDate">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" asp-for="DueDate">Notes</label>
+        <div class="control">
+            <textarea class="textarea is-primary" placeholder="e.g. need: apples, bananas, chocolate" maxlength="50" asp-for="TaskNotes"></textarea>
+            <p class="is-size-7 has-text-grey-light">Notes input is limited to 50 characters</p>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <div class="select">
+                    <label class="label" asp-for="CategoryId">Category</label>
+                    <select asp-for="CategoryId">
+                        @foreach (Category c in ViewBag.Categories)
+                        {
+                            <option value="@c.CategoryId">@c.CategoryName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="field">
+                <div class="select">
+                    <label class="label" asp-for="QuadrantId">Quadrant</label>
+                    <select asp-for="QuadrantId">
+                        @foreach (Quadrant q in ViewBag.Quadrants)
+                        {
+                            <option value="@q.QuadrantId">@q.QuadrantName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <br />
+    <br />
+    <button class="button is-primary">Submit</button>
+</form>
+<br />
+
+<div asp-validation-summary="All" class="message is-danger">
+
+</div>
