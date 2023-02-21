@@ -1,0 +1,19 @@
+﻿
+@model mission8_agraviet.Models.Task
+
+<div class="text-center">
+    <h1 class="display-4">Confirm Deletion</h1>
+</div>
+
+<article class="message is-danger">
+    <div class="message-header ">
+        <h3>Are you sure you want to delete <strong>@Model.TaskTitle</strong>?</h3>
+    </div>
+    <div class="message-body">
+        <form method="post" asp-controller="Home" asp-action="Delete">
+            <button type="submit" class="button is-danger" asp-controller="Home" asp-action="Delete">DELETE</button>
+            <a class="button is-primary" asp-controller="Home" asp-action="Index">CANCEL</a>
+            <input type="hidden" asp-for="TaskId" />
+        </form>
+    </div>
+</article>

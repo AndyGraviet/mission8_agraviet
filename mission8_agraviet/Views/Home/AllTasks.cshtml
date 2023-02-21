@@ -4,7 +4,7 @@
 
 @model List<mission8_agraviet.Models.Task>
 
-<h1>All Task View</h1>
+
 <table class="table is-striped is-hoverable">
     <thead>
         <tr class="has-background-link">
@@ -29,13 +29,14 @@
                     if (x.Completed)
                     {
                         <td>Yes</td>
-                    } else
+                    }
+                    else
                     {
                         <td>No</td>
                     }
                 }
-                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
-                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
+                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId"><strong>Edit</strong></a></td>
+                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId"><strong>Delete</strong></a></td>
             </tr>
         }
     </tbody>

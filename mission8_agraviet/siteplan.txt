@@ -25,3 +25,9 @@ ORGANIZATION
         
 
     }
+
+NEED TO DO
+ - control flow of data back to index page. should separate things by the 4 quadrants, rn they aren't separated
+ - post forms to db
+ - edit forms to db
+ - delete forms from db

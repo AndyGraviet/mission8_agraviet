@@ -25,24 +25,27 @@
                     <tbody>
                         @foreach (var x in Model)
                         {
-                            <tr>
-                                <td>@x.Category.CategoryName</td>
-                                <td>@x.TaskTitle</td>
-                                <td>@x.DueDate</td>
-                                <td>@x.TaskNotes</td>
-                                @{
-                                    if (x.Completed)
-                                    {
-                                        <td>Yes</td>
+                            @if ((x.QuadrantId == 1) && (x.Completed == false))
+                                {
+                                <tr>
+                                    <td>@x.Category.CategoryName</td>
+                                    <td>@x.TaskTitle</td>
+                                    <td>@x.DueDate</td>
+                                    <td>@x.TaskNotes</td>
+                                    @{
+                                        if (x.Completed)
+                                        {
+                                            <td>Yes</td>
+                                        }
+                                        else
+                                        {
+                                            <td>No</td>
+                                        }
                                     }
-                                    else
-                                    {
-                                        <td>No</td>
-                                    }
-                                }
-                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
-                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
-                            </tr>
+                                    <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId"><strong>Edit</strong></a></td>
+                                    <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId"><strong>Delete</strong></a></td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -70,24 +73,27 @@
                     <tbody>
                         @foreach (var x in Model)
                         {
-                            <tr>
-                                <td>@x.Category.CategoryName</td>
-                                <td>@x.TaskTitle</td>
-                                <td>@x.DueDate</td>
-                                <td>@x.TaskNotes</td>
-                                @{
-                                    if (x.Completed)
-                                    {
-                                        <td>Yes</td>
+                            @if ((x.QuadrantId == 2) && (x.Completed == false))
+                                {
+                                <tr>
+                                    <td>@x.Category.CategoryName</td>
+                                    <td>@x.TaskTitle</td>
+                                    <td>@x.DueDate</td>
+                                    <td>@x.TaskNotes</td>
+                                    @{
+                                        if (x.Completed)
+                                        {
+                                            <td>Yes</td>
+                                        }
+                                        else
+                                        {
+                                            <td>No</td>
+                                        }
                                     }
-                                    else
-                                    {
-                                        <td>No</td>
-                                    }
-                                }
-                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
-                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
-                            </tr>
+                                    <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId"><strong>Edit</strong></a></td>
+                                    <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId"><strong>Delete</strong></a></td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -118,24 +124,27 @@
                     <tbody>
                         @foreach (var x in Model)
                         {
-                            <tr>
-                                <td>@x.Category.CategoryName</td>
-                                <td>@x.TaskTitle</td>
-                                <td>@x.DueDate</td>
-                                <td>@x.TaskNotes</td>
-                                @{
-                                    if (x.Completed)
-                                    {
-                                        <td>Yes</td>
+                            @if ((x.QuadrantId == 3) && (x.Completed == false))
+                            {
+                                <tr>
+                                    <td>@x.Category.CategoryName</td>
+                                    <td>@x.TaskTitle</td>
+                                    <td>@x.DueDate</td>
+                                    <td>@x.TaskNotes</td>
+                                    @{
+                                        if (x.Completed)
+                                        {
+                                            <td>Yes</td>
+                                        }
+                                        else
+                                        {
+                                            <td>No</td>
+                                        }
                                     }
-                                    else
-                                    {
-                                        <td>No</td>
-                                    }
-                                }
-                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
-                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
-                            </tr>
+                                    <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId"><strong>Edit</strong></a></td>
+                                    <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId"><strong>Delete</strong></a></td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -163,24 +172,27 @@
                     <tbody>
                         @foreach (var x in Model)
                         {
-                            <tr>
-                                <td>@x.Category.CategoryName</td>
-                                <td>@x.TaskTitle</td>
-                                <td>@x.DueDate</td>
-                                <td>@x.TaskNotes</td>
-                                @{
-                                    if (x.Completed)
-                                    {
-                                        <td>Yes</td>
+                            @if ((x.QuadrantId == 4) && (x.Completed == false))
+                            {
+                                <tr>
+                                    <td>@x.Category.CategoryName</td>
+                                    <td>@x.TaskTitle</td>
+                                    <td>@x.DueDate</td>
+                                    <td>@x.TaskNotes</td>
+                                    @{
+                                        if (x.Completed)
+                                        {
+                                            <td>Yes</td>
+                                        }
+                                        else
+                                        {
+                                            <td>No</td>
+                                        }
                                     }
-                                    else
-                                    {
-                                        <td>No</td>
-                                    }
-                                }
-                                <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-submissionId="@x.TaskId"><strong>Edit</strong></a></td>
-                                <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-submissionId="@x.TaskId"><strong>Delete</strong></a></td>
-                            </tr>
+                                    <td><a class="button is-primary" asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId"><strong>Edit</strong></a></td>
+                                    <td><a class="button is-danger" asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId"><strong>Delete</strong></a></td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -188,6 +200,12 @@
         </article>
     </div>
 </div>
+<br/>
+<br />
+<br />
+<br />
+
+
 
 
 
